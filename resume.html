@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gavin N. Morgan — Résumé</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0;
+  }
+  :root {
+    --ink: #173f42;
+    --ink-deep: #0f2c2f;
+    --gold: #c8963e;
+    --gold-soft: #e9d9b8;
+    --paper: #ffffff;
+    --wash: #f4f1ea;
+    --body: #2b2f30;
+    --muted: #68787a;
+    --rule: #d8d2c4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 9pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", sans-serif;
+    color: var(--body);
+    line-height: 1.42;
+    background: var(--paper);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 0.38in 0.65in 0.3in;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: -1.1in; top: -1.1in;
+    width: 3.4in; height: 3.4in;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,150,62,0.28) 0%, rgba(200,150,62,0) 65%);
+  }
+  .kicker {
+    font-size: 7.5pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 0.08in;
+  }
+  h1 {
+    font-family: "Liberation Serif", "Noto Serif", serif;
+    font-weight: 700;
+    font-size: 24pt;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+  .tagline {
+    margin-top: 0.05in;
+    font-size: 9.5pt;
+    letter-spacing: 0.06em;
+    color: var(--gold-soft);
+  }
+  .contact {
+    margin-top: 0.1in;
+    font-size: 8.4pt;
+    color: #dfe7e6;
+    letter-spacing: 0.02em;
+  }
+  .contact span.sep { color: var(--gold); padding: 0 0.09in; }
+
+  /* ---------- page body ---------- */
+  .page { padding: 0.3in 0.65in 0.34in; }
+
+  section { margin-bottom: 0.12in; }
+  h2 {
+    font-size: 8.4pt;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1.6pt solid var(--gold);
+    padding-bottom: 0.04in;
+    margin-bottom: 0.06in;
+  }
+  .summary { font-size: 9.4pt; color: #33403f; line-height: 1.45; }
+
+  /* ---------- experience ---------- */
+  .job { margin-bottom: 0.11in; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.02in; }
+  .role { font-weight: 700; font-size: 10.4pt; color: var(--ink-deep); }
+  .dates { font-size: 8.4pt; color: var(--muted); white-space: nowrap; font-style: italic; }
+  .org { font-size: 8.8pt; color: var(--muted); margin-bottom: 0.03in; }
+  .org em { font-style: italic; }
+  ul.bullets { list-style: none; margin-left: 0.02in; }
+  ul.bullets li {
+    padding-left: 0.16in;
+    position: relative;
+    margin-bottom: 0.018in;
+    font-size: 9.1pt;
+  }
+  ul.bullets li::before {
+    content: "▸";
+    color: var(--gold);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+  }
+  ul.bullets li strong { color: var(--ink-deep); }
+
+  /* ---------- skills ---------- */
+  .skillgrid { display: flex; flex-wrap: wrap; gap: 0.1in 0.28in; }
+  .skillcat { flex: 1 1 44%; min-width: 2.6in; margin-bottom: 0.035in; }
+  .skillcat .label {
+    font-size: 8.2pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink); margin-bottom: 0.02in;
+  }
+  .skillcat .items { font-size: 9.1pt; color: #3a4444; }
+
+  .techgrid { display: flex; flex-wrap: wrap; gap: 0.04in 0.26in; }
+  .toolgroup { flex: 1 1 45%; min-width: 2.7in; margin-bottom: 0.045in; }
+  .toolgroup .tlabel {
+    display: inline-block;
+    font-size: 7.8pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #fff; background: var(--ink);
+    padding: 0.018in 0.09in; border-radius: 0.1in;
+    margin-right: 0.06in; vertical-align: middle;
+  }
+  .toolgroup .titems { font-size: 9pt; color: #3a4444; }
+
+  /* ---------- ventures ---------- */
+  .ventures { display: flex; flex-wrap: wrap; gap: 0.07in 0.22in; }
+  .venture { flex: 1 1 29%; min-width: 1.9in; margin-bottom: 0.04in; break-inside: avoid; }
+  .venture .vname { font-weight: 700; color: var(--ink-deep); font-size: 9.1pt; }
+  .venture .vyear {
+    display: inline-block; font-size: 7.6pt; font-weight: 700; color: var(--ink);
+    border: 1pt solid var(--gold); border-radius: 0.09in;
+    padding: 0 0.07in; margin-left: 0.06in;
+  }
+  .venture .vdesc { font-size: 8.6pt; color: #4a5556; }
+
+  /* ---------- philosophy ---------- */
+  .phil {
+    background: var(--wash);
+    border-left: 3pt solid var(--gold);
+    padding: 0.08in 0.12in;
+    display: flex; flex-wrap: wrap; gap: 0.03in 0.24in;
+  }
+  .phil div { flex: 1 1 44%; min-width: 2.4in; font-size: 8.6pt; }
+  .phil strong { color: var(--ink-deep); }
+
+  .edu-line { font-size: 9.2pt; }
+  .edu-line .sep { color: var(--gold); padding: 0 0.08in; }
+
+  .pagebreak { break-before: page; }
+  footer {
+    margin-top: 0.1in;
+    font-size: 7.6pt; color: var(--muted); text-align: center; letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Résumé</div>
+  <h1>Gavin N. Morgan</h1>
+  <div class="tagline">Software Developer &middot; Technical Generalist &middot; Agentic Systems Engineer</div>
+  <div class="contact">
+    <span>hello@gavmor.com</span><span class="sep">◆</span><span>(650) 787-6770</span><span class="sep">◆</span><span>Mountain View, CA</span><span class="sep">◆</span><span>linkedin.com/in/gavmor</span><span class="sep">◆</span><span>github.com/gavmor</span>
+  </div>
+</header>
+
+<div class="page">
+
+<section>
+  <h2>Professional Summary</h2>
+  <p class="summary">
+    Versatile Software Developer and Technical Generalist with deep experience across SaaS development,
+    DevOps, and continuous delivery. Excels in engineering leadership — project scoping and mentoring —
+    with strong product-management instincts in road-mapping, UX research, and market validation.
+    A dogmatic practitioner of agile planning and eXtreme Programming, dedicated to continuous learning,
+    impactful solutions, and force-multiplier technologies that build high-performing teams and products.
+  </p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">AI / Agentic Systems Engineer &amp; Delivery Lead</div>
+      <div class="dates">2025 – Present</div>
+    </div>
+    <div class="org">Artium <em>— client engagements: a financial services firm; a major academic medical center</em></div>
+    <ul class="bullets">
+      <li>Designed, architected, and shipped production software built on <strong>semi-autonomous agentic loops (Claude Agent SDK)</strong>: lifecycle-hook management, tool provisioning, and MCP integration.</li>
+      <li>Built <strong>human-in-the-loop pipelines</strong> surfacing curated human feedback into agent context at decision-critical stages, improving decision quality.</li>
+      <li>Stood up <strong>statistical evaluation practice (Arize Phoenix, DeepEval)</strong> — experiments against golden datasets proving whether context-engineering changes helped or hurt; continuous offline evals wired into <strong>CI</strong>.</li>
+      <li>Delivered the full stack around the agents: <strong>API services, ORM/database management, cloud container platform</strong>.</li>
+      <li><em>Financial services:</em> agentic system classifying and deciding on financial products; automated research at superhuman throughput, cutting <strong>weeks to months</strong> off operations time.</li>
+      <li><em>Medical research administration:</em> platform letting institutions <strong>securely expose private research data to AI without public divulgence</strong>, enabling first-time AI-assisted proposal evaluation and award decisions.</li>
+      <li><strong>Led delivery:</strong> facilitated planning, groomed the backlog with a product manager, and drove the <strong>path to production</strong> so proofs-of-concept got operationalized, not shelved.</li>
+      <li>Managed IT/vendor relationships for <strong>compute, cloud, and project-management resources</strong>; owned documentation and compliance; maintained <strong>DevOps tooling and reusable agent skills</strong> accelerating colleagues' delivery.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Freelance Consultant</div>
+      <div class="dates">2022 – 2024</div>
+    </div>
+    <div class="org">Various</div>
+    <ul class="bullets">
+      <li>Advised and demoed <strong>AI/ML operationalization &amp; strategy</strong>.</li>
+      <li>Revitalized legacy codebase with test suites.</li>
+      <li>Facilitated requirements gathering and design processes.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Co-Founder / CPO</div>
+      <div class="dates">2020 – 2022</div>
+    </div>
+    <div class="org">Druthers.app — <em>real-time peer-to-peer multiplayer group decision-making</em></div>
+    <ul class="bullets">
+      <li>Designed and implemented <strong>responsive mobile UI</strong>.</li>
+      <li>Co-implemented <strong>CRDT over WebRTC networked persistence</strong>.</li>
+      <li>Validated market through customer interviews and testing.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Staff Software Engineer</div>
+      <div class="dates">Aug 2019 – Mar 2020</div>
+    </div>
+    <div class="org">VMware, Inc. <em>(acq. Pivotal Software)</em></div>
+    <ul class="bullets">
+      <li>Worked on the PKS (now Tanzu Kubernetes Grid) <strong>Core &amp; Release Engineering teams</strong>.</li>
+      <li>Maintained suites of <strong>automated testing, validation, and delivery pipelines</strong>.</li>
+      <li>Added features to <strong>PaaS control plane application</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Senior Software Engineer</div>
+      <div class="dates">Mar 2017 – Sep 2018</div>
+    </div>
+    <div class="org">Euclid Analytics</div>
+    <ul class="bullets">
+      <li>Contributed to <strong>infrastructure &amp; expansion of spatial analytics platform</strong>.</li>
+      <li>Implemented <strong>full-stack data collection features</strong> from captive portals through to databases.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Senior Partner</div>
+      <div class="dates">2016 – 2017</div>
+    </div>
+    <div class="org">Independent Contracting — <em>small software contracting agency</em></div>
+    <ul class="bullets">
+      <li>Gathered requirements and facilitated design process, producing <strong>comprehensive product roadmaps</strong>.</li>
+      <li>Led a cross-disciplinary team of five to <strong>deliver client projects</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="role">Senior Software Engineer</div>
+      <div class="dates">Oct 2012 – Nov 2016</div>
+    </div>
+    <div class="org">Pivotal Labs</div>
+    <ul class="bullets">
+      <li>Pair-programmed with clients to ship working software and teach modern languages and frameworks.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skillgrid">
+    <div class="skillcat">
+      <div class="label">Software Development</div>
+      <div class="items">SaaS Application Development, DevOps, eXtreme Programming, Pair Programming, Test-Driven Development, Release Engineering, Continuous Integration &amp; Delivery</div>
+    </div>
+    <div class="skillcat">
+      <div class="label">Engineering Leadership</div>
+      <div class="items">Project Scoping, Mentoring, Recruiting, Interviewing, Hiring, Hackathon &amp; Volunteer Coordinating</div>
+    </div>
+    <div class="skillcat">
+      <div class="label">Product Management</div>
+      <div class="items">Road-mapping, Design Thinking, Kanban &amp; Agile Project Management, UX Research, Product Validation, Market &amp; Customer Validation</div>
+    </div>
+    <div class="skillcat">
+      <div class="label">Communication</div>
+      <div class="items">Writing, Group Facilitation, Interpersonal Conflict Resolution, Pitching, Business Modeling, Lateral Thinking, Afro-Caribbean Jazz Saxophone</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Technologies</h2>
+  <div class="techgrid">
+  <div class="toolgroup"><span class="tlabel">AI</span><span class="titems">Claude Agent SDK · MCP · Arize Phoenix · DeepEval · Ollama · llama-index · qdrant</span></div>
+  <div class="toolgroup"><span class="tlabel">Languages</span><span class="titems">TypeScript · Ruby · Bash · Python · SQL · Golang · Scala · Java · Node · CSS / HTML</span></div>
+  <div class="toolgroup"><span class="tlabel">Infra</span><span class="titems">Docker · Kubernetes · Terraform · BOSH</span></div>
+  <div class="toolgroup"><span class="tlabel">CI / CD</span><span class="titems">Concourse · GoCD · Jenkins · CircleCI</span></div>
+  <div class="toolgroup"><span class="tlabel">Frontend</span><span class="titems">Vite · React · Preact · bun · Babel · Webpack · d3 · Angular · Backbone · Figma</span></div>
+  <div class="toolgroup"><span class="tlabel">Backend</span><span class="titems">Rails · Sinatra · Flask · Spring</span></div>
+  <div class="toolgroup"><span class="tlabel">PaaS / Cloud</span><span class="titems">Cloudflare · GCP · AWS · Firebase · Cloud Foundry · VMware Tanzu</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Ventures</h2>
+  <div class="ventures">
+    <div class="venture"><span class="vname">Druthers.app</span><span class="vyear">2020</span><div class="vdesc">Co-founded real-time peer-to-peer multiplayer group decision-making SaaS.</div></div>
+    <div class="venture"><span class="vname">BitRegister</span><span class="vyear">2017</span><div class="vdesc">Cashless touchscreen POS register with blockchain integration.</div></div>
+    <div class="venture"><span class="vname">FirstClass CI</span><span class="vyear">2016</span><div class="vdesc">Automated multi-tenant provisioning for Concourse CI/CD-as-a-service.</div></div>
+    <div class="venture"><span class="vname">Concrn.org</span><span class="vyear">2015</span><div class="vdesc">Real-time dashboard dispatching mental-health crisis care-workers.</div></div>
+    <div class="venture"><span class="vname">Kindici</span><span class="vyear">2010</span><div class="vdesc">App for staging crowdfunded events.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p class="edu-line">University of California, Santa Cruz, CA <span class="sep">◆</span> Foothill College, Los Altos, CA</p>
+</section>
+
+<section>
+  <h2>Professional Philosophy</h2>
+  <div class="phil">
+    <div><strong>Impact</strong> — solving real problems beyond software for software's sake.</div>
+    <div><strong>Mastery</strong> — continuous pursuit of deep understanding and technical excellence.</div>
+    <div><strong>Leverage</strong> — force multipliers that dramatically increase productivity.</div>
+    <div><strong>Innovation</strong> — curiosity and experimentation with new technologies.</div>
+    <div><strong>Collaboration</strong> — pair programming and consensus building to supercharge teams.</div>
+    <div><strong>Rapid Prototyping</strong> — functional spikes to validate ideas and explore tech.</div>
+    <div><strong>Design-Oriented Engineering</strong> — bridging design vision and technical implementation.</div>
+  </div>
+</section>
+
+<footer>References available on request &nbsp;·&nbsp; Remote work preferred</footer>
+
+</div>
+</body>
+</html>
